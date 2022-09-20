@@ -3,36 +3,36 @@
 
 class Calculator
 {
-public:
+private:
     double num1;
     double num2;
-
-    double add()
+public:
+    double add(double num1, double num2)
     {
         return num1 + num2;
     }
 
-    double multiply()
+    double multiply(double num1, double num2)
     {
         return num1 * num2;
     }
 
-    double subtract_1_2()
+    double subtract_1_2(double num1, double num2)
     {
         return num1 - num2;
     }
 
-    double subtract_2_1()
+    double subtract_2_1(double num1, double num2)
     {
         return num2 - num1;
     }
 
-    double divide_1_2()
+    double divide_1_2(double num1, double num2)
     {
         return num1 / num2;
     }
 
-    double divide_2_1()
+    double divide_2_1(double num1, double num2)
     {
         return num2 / num1;
     }
@@ -71,27 +71,28 @@ int main()
     setlocale(LC_ALL, "Russian");
 
     Calculator calc;
+    double num1 = 0;
+    double num2 = 0;
     for (; ; )
     {
         do
         {
             std::cout << "Введите num1: ";
-            std::cin >> calc.num1;
-        } while (calc.set_num1(calc.num1) == false);
+            std::cin >> num1;
+        } while (calc.set_num1(num1) == false);
 
         do
         {
             std::cout << "Введите num2: ";
-            std::cin >> calc.num2;
-        } while (calc.set_num2(calc.num2) == false);
+            std::cin >> num2;
+        } while (calc.set_num2(num2) == false);
 
-        std::cout << "num1 + num2 = " << calc.add() << std::endl;
-        std::cout << "num1 - num2 = " << calc.subtract_1_2() << std::endl;
-        std::cout << "num2 - num1 = " << calc.subtract_2_1() << std::endl;
-        std::cout << "num1 * num2 = " << calc.multiply() << std::endl;
-        std::cout << "num1 / num2 = " << calc.divide_1_2() << std::endl;
-        std::cout << "num2 / num1 = " << calc.divide_2_1() << std::endl;
+        std::cout << "num1 + num2 = " << calc.add(num1, num2) << std::endl;
+        std::cout << "num1 - num2 = " << calc.subtract_1_2(num1, num2) << std::endl;
+        std::cout << "num2 - num1 = " << calc.subtract_2_1(num1, num2) << std::endl;
+        std::cout << "num1 * num2 = " << calc.multiply(num1, num2) << std::endl;
+        std::cout << "num1 / num2 = " << calc.divide_1_2(num1, num2) << std::endl;
+        std::cout << "num2 / num1 = " << calc.divide_2_1(num1, num2) << std::endl;
     }
-
     return 0;
 }
