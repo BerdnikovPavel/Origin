@@ -6,14 +6,13 @@ class Figure
 protected:
     std::string name;
     unsigned int sides_count;
-
-    Figure(std::string name)
+public:
+    Figure(std::string name, unsigned int sides_count)
     {
         this->name = name;
         this->sides_count = sides_count;
     }
 
-public:
     Figure()
     {
         name = "Фигура";
@@ -45,9 +44,9 @@ class Triangle : public Figure
 {
 protected:
     unsigned int a, b, c, A, B, C;
-
+public:
     Triangle(unsigned int a, unsigned int b, unsigned int c,
-        unsigned int A, unsigned int B, unsigned int C) : Figure()
+        unsigned int A, unsigned int B, unsigned int C) : Triangle()
     {
         this->a = a;
         this->b = b;
@@ -57,8 +56,7 @@ protected:
         this->C = C;
     }
 
-public:
-    Triangle() : Triangle(10, 20, 30, 50, 60, 70)
+    Triangle()
     {
         name = "Треугольник";
         sides_count = 3;
@@ -79,8 +77,8 @@ public:
 
 class  RightTriangle : public Triangle
 {
-protected:
-    RightTriangle(unsigned int a, unsigned int b, unsigned int c, unsigned int A, unsigned int B) : Triangle()
+public:
+    RightTriangle(unsigned int a, unsigned int b, unsigned int c, unsigned int A, unsigned int B) : RightTriangle()
     {
         this->a = a;
         this->b = b;
@@ -88,8 +86,8 @@ protected:
         this->A = A;
         this->B = B;
     }
-public:
-    RightTriangle() : RightTriangle(10, 20, 30, 50, 60)
+
+    RightTriangle()
     {
         name = "Прямоугольный треугольник";
         sides_count = 3;
@@ -105,21 +103,21 @@ public:
 
 class IsoscelesTriangle : public Triangle
 {
-protected:
-    IsoscelesTriangle(unsigned int a, unsigned int b, unsigned int A, unsigned int B) : Triangle()
+public:
+    IsoscelesTriangle(unsigned int a, unsigned int b, unsigned int A, unsigned int B) : IsoscelesTriangle()
     {
         this->a = a;
         this->b = b;
         this->A = A;
         this->B = B;
+        this->c = a;
+        this->C = A;
     }
-public:
-    IsoscelesTriangle() : IsoscelesTriangle(10, 20, 50, 60)
+
+    IsoscelesTriangle()
     {
         name = "Равнобедренный треугольник";
         sides_count = 3;
-        c = a;
-        C = A;
     }
 
     bool check() override
@@ -131,17 +129,18 @@ public:
 
 class EquilateralTriangle : public IsoscelesTriangle
 {
-protected:
-    EquilateralTriangle(unsigned int a) : IsoscelesTriangle()
+public:
+    EquilateralTriangle(unsigned int a) : EquilateralTriangle()
     {
         this->a = a;
+        this->b = a;
+        this->c = a;
     }
-public:
-    EquilateralTriangle() : EquilateralTriangle(30)
+
+    EquilateralTriangle()
     {
         name = "Равносторонний треугольник";
         sides_count = 3;
-        c = b = a;
         A = B = C = 60;
     }
 
@@ -154,11 +153,11 @@ public:
 
 class Quadrangle : public Figure
 {
-protected:
+public:
     unsigned int a, b, c, d, A, B, C, D;
 
     Quadrangle(unsigned int a, unsigned int b, unsigned int c, unsigned int d,
-        unsigned int A, unsigned int B, unsigned int C, unsigned int D) : Figure()
+        unsigned int A, unsigned int B, unsigned int C, unsigned int D) : Quadrangle()
     {
         this->a = a;
         this->b = b;
@@ -170,8 +169,7 @@ protected:
         this->D = D;
     }
 
-public:
-    Quadrangle() : Quadrangle(10, 20, 30, 40, 50, 60, 70, 80)
+    Quadrangle()
     {
         name = "Четырёхугольник";
         sides_count = 4;
@@ -193,23 +191,23 @@ public:
 
 class Parallelogram : public Quadrangle
 {
-protected:
-    Parallelogram(unsigned int a, unsigned int b, unsigned int A, unsigned int B) : Quadrangle()
+public:
+    Parallelogram(unsigned int a, unsigned int b, unsigned int A, unsigned int B) : Parallelogram()
     {
         this->a = a;
         this->b = b;
+        this->c = a;
+        this->d = b;
         this->A = A;
         this->B = B;
+        this->C = A;
+        this->D = B;
     }
-public:
-    Parallelogram() : Parallelogram(20, 30, 30, 40)
+
+    Parallelogram()
     {
         name = "Параллелограмм";
         sides_count = 4;
-        c = a;
-        d = b;
-        C = A;
-        D = B;
     }
 
     bool check() override
@@ -221,19 +219,19 @@ public:
 
 class RectAngle : public Parallelogram
 {
-protected:
-    RectAngle(unsigned int a, unsigned int b) : Parallelogram()
+public:
+    RectAngle(unsigned int a, unsigned int b) : RectAngle()
     {
         this->a = a;
         this->b = b;
+        this->c = a;
+        this->d = b;
     }
-public:
-    RectAngle() : RectAngle(10, 20)
+
+    RectAngle()
     {
         name = "Прямоугольник";
         sides_count = 4;
-        c = a;
-        d = b;
         A = B = C = D = 90;
     }
 
@@ -246,21 +244,23 @@ public:
 
 class Rhombus : public Parallelogram
 {
-protected:
-    Rhombus(unsigned int a, unsigned int A, unsigned int B) : Parallelogram()
+public:
+    Rhombus(unsigned int a, unsigned int A, unsigned int B) : Rhombus()
     {
         this->a = a;
+        this->b = a;
+        this->c = a;
+        this->d = a;
         this->A = A;
         this->B = B;
+        this->C = A;
+        this->D = B;
     }
-public:
-    Rhombus() : Rhombus(30, 30, 40)
+
+    Rhombus()
     {
         name = "Ромб";
         sides_count = 4;
-        b = c = d = a;
-        C = A;
-        D = B;
     }
 
     bool check() override
@@ -272,17 +272,19 @@ public:
 
 class Square : public Rhombus
 {
-protected:
-    Square(unsigned int a) : Rhombus()
+public:
+    Square(unsigned int a) : Square()
     {
         this->a = a;
+        this->b = a;
+        this->c = a;
+        this->d = a;
     }
-public:
-    Square() : Square(20)
+
+    Square()
     {
         name = "Квадрат";
         sides_count = 4;
-        b = c = d = a;
         A = B = C = D = 90;
     }
 
@@ -299,26 +301,41 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-    Figure figure;
-    Triangle triangle;
-    RightTriangle rightTriangle;
-    Quadrangle quadrangle;
-    IsoscelesTriangle isoscelesTriangle;
-    EquilateralTriangle equilateralTriangle;
-    Parallelogram parallelogramm;
-    RectAngle rectangle;
-    Rhombus rhombus;
-    Square square;
-    figure.print_info();
+    Figure*figure;
+    Figure fig;
+    Triangle triangle(10, 20, 30, 50, 60, 70);
+    RightTriangle rightTriangle1(10, 20, 30, 50, 60);
+    RightTriangle rightTriangle2(10, 20, 30, 50, 40);
+    IsoscelesTriangle isoscalesTriangle(10, 20, 50, 60);
+    EquilateralTriangle equilateralTriangle(30);
+    Quadrangle quadrangle(10, 20, 30, 40, 50, 60, 70, 80);
+    Parallelogram parallelogram(20, 30, 30, 40);
+    RectAngle rectangle(10, 20);
+    Rhombus rhombus(30, 30, 40);
+    Square square(20);
+    figure = &fig;
+    figure->print_info();
     std::cout << std::endl;
-    triangle.print_info();
-    rightTriangle.print_info();
-    isoscelesTriangle.print_info();
-    equilateralTriangle.print_info();
-    quadrangle.print_info();
-    rectangle.print_info();
-    square.print_info();
-    parallelogramm.print_info();
-    rhombus.print_info();
+    figure = &triangle;
+    figure->print_info();
+    figure = &rightTriangle1;
+    figure->print_info();
+    figure = &rightTriangle2;
+    figure->print_info();
+    figure = &isoscalesTriangle;
+    figure->print_info();
+    figure = &equilateralTriangle;
+    figure->print_info();
+    figure = &quadrangle;
+    figure->print_info();
+    figure = &parallelogram;
+    figure->print_info();
+    figure = &rectangle;
+    figure->print_info();
+    figure = &rhombus;
+    figure->print_info();
+    figure = &square;
+    figure->print_info();
+ 
     return 0;
 }
