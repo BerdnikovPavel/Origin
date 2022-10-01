@@ -3,19 +3,23 @@
 #include <windows.h>
 
 #define MODE 1
+#if !defined MODE
+#error Необходимо определить индентификатор MODE
+#elif MODE == 1
+int add(int a, int b)
+{
+    return a + b;
+}
+#endif
 int main(int argc, char** argv)
 {
     setlocale(LC_ALL, "Russian");
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-#if !defined MODE
-    #error Необходимо определить индентификатор MODE
-#endif
 #if MODE == 0
-        std::cout << "Работаю в режиме тренировки" << std::endl;
+    std::cout << "Работаю в режиме тренировки";
 #elif MODE == 1
-#define add(a, b) ((a) + (b))
     int a = 0;
     int b = 0;
     std::cout << "Работаю в боевом режиме" << std::endl;
