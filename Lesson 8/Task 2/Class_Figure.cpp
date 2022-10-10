@@ -1,14 +1,13 @@
 #include "Class_Figure.h"
 
-    Figure::Figure(unsigned int sides_count)
-    {
-        this->name = name;
-        this->sides_count = sides_count;
-    }
-
-    Figure::Figure() : Figure(0)
+    Figure::Figure()
     {
         name = "Фигура";
+    }
+
+    Figure::Figure(unsigned int sides_count) : Figure()
+    {
+        this->sides_count = sides_count;
         print();
         if (sides_count != 0)
         {

@@ -23,16 +23,17 @@ int main()
 
     try
     {
-        Figure figure;
-        Triangle triangle;
-        RightTriangle rightTriangle;
-        IsoscelesTriangle isoscelesTriangle;
-        EquilateralTriangle equilateralTriangle;
-        Quadrangle quadrangle;
-        Parallelogram parallelogramm;
-        RectAngle rectangle;
-        Rhombus rhombus;
-        Square square;
+        Figure figure(0);
+        Triangle triangle(3, 10, 20, 30, 50, 60, 70);
+        RightTriangle rightTriangle(3, 10, 20, 30, 40, 50, 90);
+        RightTriangle rightTriangle2(3, 10, 20, 30, 40, 40, 90);
+        IsoscelesTriangle isoscelesTriangle(3, 10, 20, 10, 50, 80, 50);
+        EquilateralTriangle equilateralTriangle(3, 10, 10, 10, 60, 60, 60);
+        Quadrangle quadrangle(4, 10, 20, 30, 40, 50, 90, 100, 120);
+        Parallelogram parallelogramm(4, 30, 20, 30, 20, 30, 150, 30, 150);
+        RectAngle rectangle(4, 10, 20, 10, 20, 90, 90, 90, 90);
+        Rhombus rhombus(4, 30, 30, 30, 30, 60, 120, 60, 120);
+        Square square(4, 20, 20, 20, 20, 90, 90, 90, 90);
     }
     catch (const MyException& ex)
     {
