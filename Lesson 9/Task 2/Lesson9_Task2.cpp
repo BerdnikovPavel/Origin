@@ -86,13 +86,15 @@ public:
 	}
 	Fraction& operator++(int)
 	{
-		numerator_ = numerator_ + denominator_;
-		return *this;
+		Fraction temp = *this;
+		++(*this);
+		return temp;
 	}
 	Fraction& operator--(int)
 	{
-		numerator_ = numerator_ - denominator_;
-		return *this;
+		Fraction temp = *this;
+		--(*this);
+		return temp;
 	}
 };
 
@@ -133,6 +135,10 @@ int main()
 		Fraction post_dec = f1-- * f2;
 		f1.print(); std::cout << "-- * "; f2.print(); std::cout << " = "; post_dec.print(); std::cout << std::endl;
 		std::cout << "Значение дроби 1 = "; f1.print(); std::cout << std::endl;
+		Fraction f3(3, 7);
+		Fraction f4 = f3++;
+		f4.print(); std::cout << std::endl;
+		f3.print();
 	}
 	catch (const DivisionByZeroException& ex) { std::cout << ex.what() << std::endl; }
 	return 0;
