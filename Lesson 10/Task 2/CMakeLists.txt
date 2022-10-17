@@ -1,0 +1,26 @@
+cmake_minimum_required(VERSION 3.22.0)
+project(figure_hierarchy)
+add_executable(creating_figures 
+    Lesson10_Task2.cpp 
+    Class_Figure.cpp 
+    Class_Figure.h
+    Class_Triangle.cpp
+    Class_Triangle.h
+    Class_RightTriangle.cpp
+    Class_RightTriangle.h
+    Class_IsoscelesTriangle.cpp
+    Class_IsoscelesTriangle.h
+    Class_EquilateralTriangle.cpp
+    Class_EquilateralTriangle.h
+    Class_Quadrangle.cpp
+    Class_Quadrangle.h
+    Class_Parallelogram.cpp
+    Class_Parallelogram.h
+    Class_RectAngle.cpp
+    Class_RectAngle.h
+    Class_Rhombus.cpp
+    Class_Rhombus.h
+    Class_Square.cpp
+    Class_Square.h
+    print_info.cpp 
+    print_info.h)
