@@ -1,0 +1,4 @@
+C:/Users/79127/source/repos/Lesson11_Task3/out/build/x64-Debug/CMakeFiles/Lesson11_Task2.dir
+C:/Users/79127/source/repos/Lesson11_Task3/out/build/x64-Debug/CMakeFiles/LeaverProgram2.dir
+C:/Users/79127/source/repos/Lesson11_Task3/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/79127/source/repos/Lesson11_Task3/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir

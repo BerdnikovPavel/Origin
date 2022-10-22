@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\79127\source\repos\Lesson11_Task5\Class_Figure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\79127\source\repos\Lesson11_Task5\Class_Triangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\79127\source\repos\Lesson11_Task5\Class_EquilateralTriangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\79127\source\repos\Lesson11_Task5\Class_IsoscelesTriangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\79127\source\repos\Lesson11_Task5\Class_RightTriangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\79127\source\repos\Lesson11_Task5\Class_Parallelogram.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\79127\source\repos\Lesson11_Task5\Class_Quadrangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\79127\source\repos\Lesson11_Task5\Class_RectAngle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\79127\source\repos\Lesson11_Task5\Class_Rhombus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\79127\source\repos\Lesson11_Task5\Class_Square.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\79127\source\repos\Lesson11_Task5\print_info.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\79127\source\repos\Lesson11_Task5\Class_Figure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\79127\source\repos\Lesson11_Task5\Class_Triangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\79127\source\repos\Lesson11_Task5\Class_EquilateralTriangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\79127\source\repos\Lesson11_Task5\Class_IsoscelesTriangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\79127\source\repos\Lesson11_Task5\Class_RightTriangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\79127\source\repos\Lesson11_Task5\Class_Parallelogram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\79127\source\repos\Lesson11_Task5\Class_Quadrangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\79127\source\repos\Lesson11_Task5\Class_RectAngle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\79127\source\repos\Lesson11_Task5\Class_Rhombus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\79127\source\repos\Lesson11_Task5\Class_Square.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\79127\source\repos\Lesson11_Task5\print_info.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\79127\source\repos\Lesson11_Task5\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{406FA5BD-8890-3B2A-B4D6-4EDBE111DBAA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{DD15B8E4-78A6-33CD-A49B-323A7B288466}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

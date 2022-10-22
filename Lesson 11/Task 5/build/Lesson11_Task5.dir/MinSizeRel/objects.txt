@@ -1,0 +1,11 @@
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/MinSizeRel/Class_Figure.obj
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/MinSizeRel/Class_Triangle.obj
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/MinSizeRel/Class_EquilateralTriangle.obj
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/MinSizeRel/Class_IsoscelesTriangle.obj
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/MinSizeRel/Class_RightTriangle.obj
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/MinSizeRel/Class_Parallelogram.obj
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/MinSizeRel/Class_Quadrangle.obj
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/MinSizeRel/Class_RectAngle.obj
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/MinSizeRel/Class_Rhombus.obj
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/MinSizeRel/Class_Square.obj
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/MinSizeRel/print_info.obj

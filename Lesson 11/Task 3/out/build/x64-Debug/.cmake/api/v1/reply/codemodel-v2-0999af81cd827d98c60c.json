@@ -1,0 +1,69 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Lesson11_Task3",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "LeaverProgram2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LeaverProgram2-Debug-8069d9e2d35683124e72.json",
+					"name" : "LeaverProgram2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Lesson11_Task2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Lesson11_Task2-Debug-ee17ddad51a751a8f835.json",
+					"name" : "Lesson11_Task2",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/79127/source/repos/Lesson11_Task3/out/build/x64-Debug",
+		"source" : "C:/Users/79127/source/repos/Lesson11_Task3"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

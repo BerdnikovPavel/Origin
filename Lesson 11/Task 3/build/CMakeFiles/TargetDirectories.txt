@@ -1,0 +1,4 @@
+C:/Users/79127/source/repos/Lesson11_Task3/build/CMakeFiles/Lesson11_Task2.dir
+C:/Users/79127/source/repos/Lesson11_Task3/build/CMakeFiles/LeaverProgram2.dir
+C:/Users/79127/source/repos/Lesson11_Task3/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/79127/source/repos/Lesson11_Task3/build/CMakeFiles/ZERO_CHECK.dir

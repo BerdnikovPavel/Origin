@@ -1,0 +1,11 @@
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/RelWithDebInfo/Class_Figure.obj
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/RelWithDebInfo/Class_Triangle.obj
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/RelWithDebInfo/Class_EquilateralTriangle.obj
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/RelWithDebInfo/Class_IsoscelesTriangle.obj
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/RelWithDebInfo/Class_RightTriangle.obj
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/RelWithDebInfo/Class_Parallelogram.obj
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/RelWithDebInfo/Class_Quadrangle.obj
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/RelWithDebInfo/Class_RectAngle.obj
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/RelWithDebInfo/Class_Rhombus.obj
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/RelWithDebInfo/Class_Square.obj
+C:/Users/79127/source/repos/Lesson11_Task5/build/Lesson11_Task5.dir/RelWithDebInfo/print_info.obj

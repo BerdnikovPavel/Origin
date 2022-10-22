@@ -1,0 +1,4 @@
+C:/Users/79127/source/repos/Lesson11_Task5/build/CMakeFiles/Lesson11_Task5.dir
+C:/Users/79127/source/repos/Lesson11_Task5/build/CMakeFiles/GeometricShapesProgram2.dir
+C:/Users/79127/source/repos/Lesson11_Task5/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/79127/source/repos/Lesson11_Task5/build/CMakeFiles/ZERO_CHECK.dir
