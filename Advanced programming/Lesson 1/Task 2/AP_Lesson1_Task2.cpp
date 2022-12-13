@@ -26,20 +26,22 @@ std::variant<int, std::string, std::vector<int>> get_variant() {
 
 int main(int argc, const char** argv)
 {
-	if (std::holds_alternative<int>(get_variant()))
+	auto x = get_variant();
+
+	if (std::holds_alternative<int>(x))
 	{
-		auto x = std::get<int>(get_variant());
-		std::cout << x * 2 << std::endl;
+		auto a = std::get<int>(x);
+		std::cout << a * 2 << std::endl;
 	}
-	else if (std::holds_alternative<std::string>(get_variant()))
+	else if (std::holds_alternative<std::string>(x))
 	{
-		auto x = std::get<std::string>(get_variant());
-		std::cout << x << std::endl;
+		std::string a = std::get<std::string>(x);
+		std::cout << a << std::endl;
 	}
 	else
 	{
-		auto x = std::get<std::vector<int>>(get_variant());
-		for (auto const& value : x)
+		std::vector<int> a = std::get<std::vector<int>>(x);
+		for (auto const& value : a)
 		{
 			std::cout << value << " ";
 		}

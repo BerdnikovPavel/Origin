@@ -21,11 +21,17 @@ int main(int argc, const char** argv)
 	}
 
 	std::vector<std::function<void(double)>> functions;
-	std::function < void(double) > print_sin_cos = [] (auto angle) 
+	std::function < void(double) > print_sin = [] (auto angle) 
 	{ 
-		std::cout << angle << ": sin: " << sin(angle) << " cos: " << cos(angle);
+		std::cout << "sin: " << sin(angle);
 	};
-	functions.push_back(print_sin_cos);
+	functions.push_back(print_sin);
+
+	std::function < void(double) > print_cos = [](auto angle)
+	{
+		std::cout << " cos: " << cos(angle);
+	};
+	functions.push_back(print_cos);
 
 	std::cout << "[Выходные данные]: " << std::endl;
 	for (const auto& angle : angles) {
