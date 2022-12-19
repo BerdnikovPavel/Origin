@@ -1,5 +1,4 @@
 ﻿#include <iostream>
-#include <memory>
 
 class smart_array
 {
@@ -10,13 +9,30 @@ private:
 public:
 	smart_array& operator = (const smart_array& other)
 	{
-		for (int i = 0; i < logical_size; ++i)
+		if (&other != this)
 		{
-			arr[i] = other.arr[i];
+			if (actual_size < other.actual_size)
+			{
+				delete[]arr;
+				arr = new int[other.actual_size];
+				for (int i = 0; i < other.actual_size; ++i)
+				{
+					arr[i] = other.arr[i];
+				}
+			}
+			else
+			{
+				for (int i = 0; i < other.actual_size; ++i)
+				{
+					arr[i] = other.arr[i];
+				}
+			}
+			actual_size = other.actual_size;
+			logical_size = other.logical_size;
 		}
-		delete[]other.arr;
 		return *this;
 	}
+
 	smart_array(int actual_size)
 	{
 		this->actual_size = actual_size;
@@ -24,7 +40,18 @@ public:
 		this->logical_size = 0;
 	}
 
-	int add_element(int element)
+	smart_array(const smart_array &other)
+	{
+		arr = new int[other.actual_size];
+		for (int i = 0; i < other.actual_size; ++i)
+		{
+			arr[i] = other.arr[i];
+		}
+		actual_size = other.actual_size;
+		logical_size = other.logical_size;
+	}
+
+	void add_element(int element)
 	{
 		if (logical_size == actual_size)
 		{
@@ -38,13 +65,11 @@ public:
 			++logical_size;
 			delete[]arr;
 			arr = new_arr;
-			return *new_arr;
 		}
 		else
 		{
 			arr[logical_size] = element;
 			++logical_size;
-			return *arr;
 		}
 	}
 
@@ -54,7 +79,9 @@ public:
 		return arr[index];
 	}
 	~smart_array()
-	{}
+	{
+		delete[]arr;
+	}
 };
 
 int main()

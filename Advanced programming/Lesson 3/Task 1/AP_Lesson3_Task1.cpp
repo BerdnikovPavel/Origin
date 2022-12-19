@@ -1,5 +1,4 @@
 ﻿#include <iostream>
-#include <algorithm>
 
 class smart_array 
 {
@@ -8,6 +7,8 @@ private:
 	int logical_size;
 	int* arr;
 public:
+	smart_array(const smart_array&) = delete;
+	smart_array& operator=(const smart_array&) = delete;
 	smart_array(int actual_size)
 	{
 		this->actual_size = actual_size;
@@ -15,7 +16,7 @@ public:
 		this->logical_size = 0;
 	}
 
-	int add_element(int element)
+	void add_element(int element)
 	{
 		if (logical_size == actual_size)
 		{
@@ -29,13 +30,11 @@ public:
 			++logical_size;
 			delete[]arr;
 			arr = new_arr;
-			return *new_arr;
 		}
 		else
 		{
 			arr[logical_size] = element;
 			++logical_size;
-			return *arr;
 		}
 	}
 
