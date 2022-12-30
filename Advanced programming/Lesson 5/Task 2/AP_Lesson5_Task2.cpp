@@ -13,6 +13,9 @@ public:
 		}
 	}
 
+	table(const table&){};
+	table& operator=(const table&) = delete;
+
 	~table()
 	{
 		for (int i = 0; i < rows; i++)
@@ -46,6 +49,7 @@ private:
 int main(int argc, const char** argv)
 {
 	auto test = table<int>(2, 3);
+	auto test2 = test;
 	test[0][0] = 4;
 	std::cout << test[0][0] << std::endl;
 }
