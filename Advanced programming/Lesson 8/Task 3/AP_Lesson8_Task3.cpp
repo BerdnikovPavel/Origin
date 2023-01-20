@@ -8,6 +8,8 @@ private:
 public:
     My_unique_ptr() : ptr(nullptr) {}
 
+    My_unique_ptr(T* p) { ptr = p; }
+
     ~My_unique_ptr() { delete ptr; }
 
     My_unique_ptr(const My_unique_ptr& value) = delete;
@@ -26,5 +28,10 @@ public:
 
 int main()
 {
+    My_unique_ptr<double> p(new double);
+
+    *p = 100;
+
+    p.release();
     return 0;
 }
