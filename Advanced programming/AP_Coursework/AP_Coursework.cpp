@@ -64,10 +64,8 @@ public:
                 }
             }
         }
-        else
-        {
-            std::cout << "Файл не удалось открыть!";
-        }
+        else throw std::exception("Файл не удалось открыть!");
+
         fin.close();
     }
 
@@ -81,6 +79,7 @@ public:
         std::pair<std::string, std::string> key = std::make_pair(section_name, variable_name);
         T value = NULL;
         bool is_num = false;
+        if (file_content[key] == "") throw std::exception("В файле нет значения для этой переменной");
         auto end = file_content[key].end();
         auto i = file_content[key].begin();
         if (*i == '-' || *i == '+' || (*i >= '0' && *i <= '9'))
@@ -99,6 +98,7 @@ public:
         {
             std::istringstream(file_content[key]) >> value;
         }
+        else throw std::exception("Запрашиваемый тип переменной не соответствует типу переменной в файле");
         return value;
     }
 
@@ -111,6 +111,23 @@ public:
         for (auto i = 0; i < point; ++i) { section_name += address[i]; }
         for (auto i = point + 1; i < address.length(); ++i) { variable_name += address[i]; }
         std::pair<std::string, std::string> key = std::make_pair(section_name, variable_name);
+        if (file_content[key] == "") throw std::exception("В файле нет значения для этой переменной");
+        bool is_num = false;
+        auto end = file_content[key].end();
+        auto i = file_content[key].begin();
+        if (*i == '-' || *i == '+' || (*i >= '0' && *i <= '9'))
+        {
+            ++i;
+            for (; i != end; ++i)
+            {
+                if (*i >= '0' && *i <= '9') { continue; }
+                else if (*i == '.' && i != file_content[key].begin()) { continue; }
+                else { is_num = false; }
+            }
+            is_num = true;
+        }
+
+        if (is_num) throw std::exception("Запрашиваемый тип переменной не соответствует типу переменной в файле");
         return file_content[key];
     }
 };
@@ -121,7 +138,22 @@ int main(int  argc, char** argv)
     setlocale(LC_ALL, "Russian");
 
     Ini_parser parser("INI.txt");
-    auto value = parser.get_value<int>("Section2.var2");
-    std::cout << value << std::endl;
+    try
+    {
+        auto value1 = parser.get_value<double>("Section1.var1");
+        std::cout << value1 << std::endl;
+        auto value2 = parser.get_value<std::string>("Section1.var2");
+        std::cout << value2 << std::endl;
+        auto value3 = parser.get_value<int>("Section2.var1");
+        std::cout << value3 << std::endl;
+        auto value4 = parser.get_value<std::string>("Section1.var2");
+        std::cout << value4 << std::endl;
+    }
+    catch (const std::exception& ex)
+    {
+        std::cout << ex.what() << std::endl;
+    }
+    catch (...) { std::cout << "Неизвестная ошибка" << std::endl; }
+    
     return 0;
 }
