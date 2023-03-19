@@ -86,7 +86,6 @@ public:
 		Wt::Dbo::belongsTo(a, stock, "stock");
 		Wt::Dbo::field(a, count, "count");
 	}
-
 };
 
 int main()
@@ -253,6 +252,7 @@ int main()
 		std::string publisherName;
 		std::cout << "Введите имя издателя, что бы найти магазины, в которых продаются его книги: ";
 		getline(std::cin, publisherName);
+		std::set<std::string> result;
 		
 		Wt::Dbo::Transaction transaction2(session);
 		Wt::Dbo::ptr<Publisher> pub = session.find<Publisher>().where("name=?").bind(publisherName);
@@ -269,8 +269,12 @@ int main()
 				for (const auto& stock : stocks)
 				{
 					Wt::Dbo::ptr<Shop> sh = session.find<Shop>().where("id = ?").bind(stock->shop);
-					std::cout << sh->name << std::endl;
+					result.insert(sh->name);
 				}
+			}
+			for (const auto& e : result)
+			{
+				std::cout << e << std::endl;
 			}
 		}
 		else
