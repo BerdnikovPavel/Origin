@@ -3,6 +3,7 @@
 #include <thread>
 #include <mutex>
 #include <vector>
+#include <random>
 #include <Windows.h>
 
 using namespace std;
@@ -56,31 +57,35 @@ mutex m1;
 
 void calculation(int calc_length, int thread_number)
 {
-    unique_lock<mutex>l(m1);
+    unique_lock<mutex>l(m1, defer_lock);
     Timer t;
     int x = 0;
-    int time = 1 + thread_number;
+    random_device rd;
+    mt19937 gen{ rd() };
+    uniform_int_distribution<>dis(100, 1500);
+    int time = dis(gen);
     consol_parameter c;
+    l.lock();
     c.SetPosition(x, thread_number);
     cout << thread_number + 1;
+    l.unlock();
     while (x != calc_length)
     {
-        l.unlock();
-        this_thread::sleep_for(std::chrono::seconds(time));
+        this_thread::sleep_for(std::chrono::milliseconds(time));
         l.lock();
         c.SetPosition(x + 1, thread_number);
         cout << "|";
+        l.unlock();
         ++x;
-        this_thread::sleep_for(300ms);
     }
-    c.SetPosition(x + 1, thread_number);
+    c.SetPosition(x, thread_number);
     t.print();
 }
 
 int main()
 {
     int thread_count = 3;
-    int calc_length = 10;
+    int calc_length = 20;
     vector<thread> threads;
     for (int i = 0; i < thread_count; ++i)
     {
