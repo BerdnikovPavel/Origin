@@ -11,14 +11,14 @@ template<class T>
 class safe_queue
 {
 private:
-    mutable mutex m;
+    mutex m;
     condition_variable cv;
 public:
     queue <T> q;
 
-    safe_queue(void) : q(), m(), cv() {}
+    safe_queue() : q(), m(), cv() {}
 
-    ~safe_queue(void) {}
+    ~safe_queue() {}
 
     void push(T f)
     {
@@ -27,7 +27,7 @@ public:
         cv.notify_one();
     }
 
-    T pop(void)
+    T pop()
     {
         unique_lock<mutex> lock(m);
         while (q.empty())
@@ -63,7 +63,6 @@ public:
         {
             t.join();
         }
-        this_thread::yield();
     }
 
     void work()
